@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #4C1A57, #00A8AA);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            opacity: 0; /* Initially hide the container */
+            animation: fadeIn 1s forwards; /* Apply fadeIn animation */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px); /* Start animation from slightly above */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0); /* End animation at its original position */
+            }
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #4C1A57;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #BAB0D4;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #00A8AA;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #007378;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4C1A57;
+            margin-top: 10px;
+            display: block;
+        }
+
+        a:hover {
+            color: #2D0E32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form action="/signup" method="post">
+            <input placeholder="Name" name="name" type="text">
+            <input placeholder="Password" name="password" type="password">
+            <input class="sub" type="submit" value="Sign Up">
+        </form>
+        <a href="/">Go back to login page</a>
+    </div>
+
+    <script>
+        // Optional: If you want to delay the animation slightly to make it more visible
+        window.onload = function() {
+            document.querySelector('.container').style.animationDelay = '0.2s'; // Adjust delay as needed
+        };
+    </script>
+</body>
+</html>
